@@ -1,0 +1,31 @@
+<!-- <button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">{{imagesData | json}}</button> -->
+
+<div class="modal fade bs-example-modal-sm" *ngIf="imagesData" id="carousel-modal_{{carouselIndex}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div id="carousel-example-generic_{{carouselIndex}}" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+          <li [class.active]="index == 0" *ngFor="let image of imagesData;  let index = index" [attr.data-target]="'#carousel-example-generic_'+ carouselIndex"  [attr.data-slide-to]="index" ></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item" [class.active]="index == 0" *ngFor="let image of imagesData;  let index = index">
+          <img class="img-responsive" src="{{image.href}}" alt="...">
+            <div class="carousel-caption">
+              {{image.size}}
+            </div>
+          </div>
+        </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic_{{carouselIndex}}" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic_{{carouselIndex}}" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+    </div>
+  </div>
+</div>

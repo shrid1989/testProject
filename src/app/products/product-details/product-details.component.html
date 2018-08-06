@@ -1,0 +1,26 @@
+<div class="container" >
+    <img [src]="product?.imageUrl" [alt]="product?.name" class="product-image">
+  
+    <div class="row">
+      <div class="col-md-11">
+        <h2>{{product?.name}} </h2>
+      </div>
+    </div>
+    <div>hwllo</div>
+    <div class="row">
+      <div class="col-md-6">
+        <div><strong>Date:</strong> {{product?.date}}</div>
+        <div><strong>Time:</strong> {{product?.time}}</div>
+        <div><strong>Price111:</strong> <button type="button" class="btn" modal-trigger>testset</button></div>
+        
+      </div>
+      <div class="col-md-6">
+        <address>
+          <strong>Address:</strong><br />
+          {{product?.location?.address}}<br />
+          {{product?.location?.city}}, {{product?.location?.country}}
+        </address>
+      </div>
+    </div>
+  </div>
+  <carousel-popup></carousel-popup>
